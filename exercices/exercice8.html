@@ -1,0 +1,38 @@
+﻿<html>
+	<head>
+	<meta charset="utf-8" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="icon" href="images/favicon.ico">
+		<title>Calculette</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			function calculatrice() {
+			//lire le calcul a éffectuer
+			var calcul=eval(document.calculette.calcul.value);
+			//affichage du résultat
+			document.calculette.resultat.value=calcul;
+			}
+		</script>
+		<h1>calculette</h1>
+		<form name="calculette">
+			<table>
+				<tr>
+					<td>Entrer le calcul :</td>
+					<td><input name="calcul" type="text" size="10"></td>
+				</tr>
+				<tr>
+					<td>Le résultat du calcul est :</td>
+					<td><input name="resultat" type="text" size="10"></TD>
+				</tr>
+				<tr>
+					<TD colspan="2"><DIV align="center"><INPUT type="button" value="OK" onclick="calculatrice()"><INPUT type="button" value="Reset" onclick="this.form.reset();"></td>
+				</tr>
+			</table>
+		</form>
+		<a href="../index.html"><p>Retour accueil</p></a>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+	<head>
+	<meta charset="utf-8" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="icon" href="images/favicon.ico">
+		<title>Nombre secret</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			//nombre entre 0 et 99
+			var secret=Math.round(Math.random()*100);
+			//nombre d'essais
+			var nbEssais=0;
+
+			//fonction de contrôle de la réponse
+			function control() {
+				nbEssais++;
+				var n=document.formu.prop.value;
+				if (isNaN(n)) alert("Entrer un nombre !");
+				else {
+					var nb=eval(n);
+					var S="Essai "+nbEssais+" : ";
+					if (nb==secret) S+="Bonne reponse !!!";
+					else if (nb < secret) S+="Trop petit.";
+					else S+="Trop grand.";
+					document.formu.reponse.value=S;
+				}
+			}
+		</script>
+		<h1>Nombre secret</h1><hr>
+		<p>L'ordinateur a choisi un nombre entier inferieur a 100. A vous de le retrouver le plus rapidement possible en proposant des nombres et en tenant compte des reponses fournies.</p>
+		<form name="formu">
+			<div align="center">
+				<b>Nombre propose : </b>
+				<input name="prop" type="text" size="5">et<input type="button" value="Controle" onclick="control()"><BR>
+				<input name="reponse" type="text" size="30" readonly>
+			</div>
+		</form><hr>
+		<br />
+		<a href="exercice13.html">Autre partie</a>
+		<a href="../index.html"><p>Retour accueil</p></a>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="icon" href="images/favicon.ico">
+		<title>Date et heure</title>
+	</head>
+	<body>
+		<h1>Date et heure</h1>
+		<form name="date et heure">
+			<table>
+				<tr>
+					<td>
+						<script language="JavaScript">
+							var maintenant=new Date();
+							var jour=maintenant.getDate();
+							var mois=maintenant.getMonth()+1;
+							var an=maintenant.getFullYear();
+							var heure=maintenant.getHours();  
+							var minute=maintenant.getMinutes();
+							var seconde=maintenant.getSeconds(); 
+							document.write("Nous sommes le ",jour,"/",mois,"/",an,". ");
+							document.write("Il est ",heure," heure(s) ",minute," minute(s) et ",seconde," seconde(s).");
+						</script>
+						<input type="button" value="Reset" onclick='window.location.reload(false)' value="Rafraichir">
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a href="../index.html"><p>Retour accueil</p></a>
+	</body>
+</html>

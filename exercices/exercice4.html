@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="icon" href="images/favicon.ico">
+		<title>Périmètre et aire du carré</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			function calculAire(){
+				//lire la valeur coté
+				 var cot=eval(document.form.cote.value);
+				 //calcul de l'aire 
+				 var air=cot*cot;
+				  air=Math.round(air*100)/100;
+				  //affichage du résultat
+				 document.form.aire.value=String(air);
+			}
+			function calculPerim(){
+				 //lire la valeur coté
+				 var cot=eval(document.form.cote.value);
+				 //calcul du prérimètre 
+				 var per=cot*4;
+				  per=Math.round(per*100)/100;
+				  //affichage du résultat
+				 document.form.perim.value=String(per);
+			}
+		</script>
+		<h1>Périmètre et aire du carré</h1>
+		<form name="form">
+			<table>
+				<tr>
+					<td>coté:</td>
+					<td><input name="cote" type="text" size="10"></td>
+				<tr>
+					<td>aire:</td>
+					<td><input name="aire" type="text" size="10"></td>
+					<td><input type="button" value="calculer" onclick="calculAire()"></td>
+				</tr>
+				<tr>
+					<td>Périmètre:</td>
+					<td><input name="perim" type="text" SIZE="10"></td>
+					<td><input type="button" value="calculer" onclick="calculPerim()"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Reset" onclick="this.form.reset();"></td>
+				</tr>
+			</table>
+		</form>
+		<a href="../index.html"><p>Retour accueil</p></a>
+	</body>
+</html>

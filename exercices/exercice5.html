@@ -1,0 +1,52 @@
+ <html>
+	<head>
+		<meta charset="utf-8" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="icon" href="images/favicon.ico">
+		<title>Mises en majuscules</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			function mettreMajuscule(){
+				 //lire le texte en minuscule
+				 var txt=document.form.minuscule.value;
+				 //mise en majuscule  
+				 var maj=txt.toUpperCase();
+				  //affichage du résultat
+				 document.forms["form"].elements["majuscule"].value=maj;
+			}
+			function mettreMinuscule(){
+				 //lire le texte en majuscule
+				 var txt=document.form.majuscule.value;
+				 //mise en minuscule  
+				 var min=txt.toLowerCase();
+				  //affichage du résultat
+				 document.forms["form"].elements["minuscule"].value=min;
+			}
+		</script>
+		<h1> Mises en majuscules</h1>
+		<form name="form">
+			<table>
+				<tr>
+					<td>minuscule</td>
+					<td>=></td>
+					<td><=</td>
+					<td>majuscule</td>
+				</tr>
+				<tr>
+					<td><input name="minuscule" type="text" size="10"></td>
+					<td><input type="button" value="=>" onclick='mettreMajuscule();'></td>
+					<td><input type="button" value="<=" onclick='mettreMinuscule();'></td>
+					<td><input name="majuscule" type="text" size="10"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Reset" onclick="this.form.reset();"></td>
+				</tr>
+			</table>
+		</form>
+		<a href="../index.html"><p>Retour accueil</p></a>
+	</body>
+</html>

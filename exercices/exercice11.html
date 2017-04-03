@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="icon" href="images/favicon.ico">
+		<title>Jour anniversaire</title>
+	</head>
+	<body>
+		<SCRIPT LANGUAGE="JavaScript">
+			function calcul() { 
+				var jour=eval(document.formu.jour.value);
+				var mois=eval(document.formu.mois.value);
+				var an=eval(document.formu.an.value);
+				if (an<100) an=an+1900;
+				var ladate=new Date(an,mois-1,jour);
+				var numJour=ladate.getDay();
+				document.formu.nomjour.value="Le "+jour+"/"+mois+"/"+an+" est un "+nomJour(numJour)+" !";
+			}
+			function nomJour(n) {
+				//renvoie le nom du jour numéro n
+				//0=>dimanche, 1=>lundi, etc....
+				switch (n) {
+					case 0 : return "dimanche";
+					case 1 : return "lundi";
+					case 2 : return "mardi";
+					case 3 : return "mercredi";
+					case 4 : return "jeudi";
+					case 5 : return "vendredi";
+					case 6 : return "samedi";
+				}
+			}
+			function afficheDate() {
+				var maintenant=new Date();
+				var jour=maintenant.getDate();
+				var mois=maintenant.getMonth()+1;
+				var an=maintenant.getFullYear();
+				var numJour=maintenant.getDay();
+				document.write("Nous sommes le ",nomJour(numJour)," ",jour,"/",mois,"/",an,".");
+			}
+		</SCRIPT>
+		<h1>Jour anniversaire</h1>
+		<hr width="37%" align=left>
+		<br>
+		<form name="formu">
+			<table>
+					<tr>
+						<td>Jour :</td>
+						<td><input name="jour" type="text" size="6"></td>
+					</tr>
+				<tr>
+					<td>Mois :</td>
+					<td><input name="mois" type="text" size="6"></td>
+				</tr>
+				<tr>
+					<td>Annee :</td>
+					<td><input name="an" type="text" size="6"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div align="center">
+							<input type="button" value="Calculer" onclick="calcul();">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div align="center">
+							<input name="nomjour" type="text" size="36" readonly>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<a href="../index.html"><p>Retour accueil</p></a>
+	</body>
+</html>

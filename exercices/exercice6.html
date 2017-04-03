@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="icon" href="images/favicon.ico">
+		<title>Prix TTC</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			function mettreTtc() {
+				//lire le prix en ht
+				var prix=eval(document.form.ht.value);
+				//calcule ttc
+				var result=prix*0.186;
+				result=result+prix;
+				//affichage du résultat
+				document.form.ttc.value=String(result);
+			}
+			function mettreHt() {
+				 //lire le prix en ttc
+				var prix=eval(document.form.ttc.value);
+				//calcule ht
+				var result=prix*0.84;
+				//affichage du résultat
+				document.form.ht.value=String(result);
+			}
+		</script>
+		<h1>Prix TTC</h1>
+		<form name="form">
+			<table>
+				<tr>
+					<td>Prix HT</td>
+					<td>=></td>
+					<td><=</td>
+					<td>Prix TTC</td>
+				</tr>
+				<tr>
+					<td><input name="ht" type="text" size="10"></td>
+					<td><input type="button" value="=>" onclick="mettreTtc();"></td>
+					<td><input type="button" value="<=" onclick="mettreHt();"></td>
+					<td><input name="ttc" type="text" size="10"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Reset" onclick="this.form.reset();"></td>
+				</tr>
+			</table>
+		</form>
+		<a href="../index.html"><p>Retour accueil</p></a>
+	</body>
+</html>

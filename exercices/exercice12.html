@@ -1,0 +1,43 @@
+<html>
+	<head>
+	<meta charset="utf-8" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="icon" href="images/favicon.ico">
+		<title>Calcule de moyenne</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			var n1=Math.floor(Math.random()*8)+2;
+			var n2=Math.floor(Math.random()*8)+2;
+			function verif() {
+				rep=document.formu.reponse.value;
+				if (isNaN(rep)) {
+					alert("Entrer un nombre pour repondre !");
+				}
+				else {
+					if (eval(rep)==n1*n2) {
+					   alert("Bonne reponse. Bravo !\n"+n1+"x"+n2+"="+rep);
+					   document.location.href="table_de_multipli.html";
+					}
+					else {
+						alert("Reponse inexacte !");
+					}
+				}
+			}
+		</script>
+		<h1>Tables de multiplications</h1><HR>
+		<form name="formu">
+			<div>
+				<script language="JavaScript">
+					document.write("<b><font size='+1'>",n1," x ",n2," = </font></b>");
+				</script>
+				<input name="reponse" type="text" size="4"> et <input type="button" value="Verifier" onclick="verif();">
+			</div>
+		</form>
+		<a href="exercice12.html">Autre table</a>
+		<a href="../index.html"><p>Retour accueil</p></a>
+	</body>
+</html>

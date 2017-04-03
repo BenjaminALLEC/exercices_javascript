@@ -1,0 +1,40 @@
+<html>
+	<head>
+	<meta charset="utf-8" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="icon" href="images/favicon.ico">
+		<title>Calcule de moyenne 2</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			function moyenne() {
+				var ds1=document.formu.val1.value
+				var ds2=document.formu.val2.value
+				var ds3=document.formu.val3.value
+				moy=(parseFloat(ds1)+parseFloat(ds2)+parseFloat(ds3))/3;
+				document.formu.resultat.value=String(moy);
+
+				if (moy>14) document.formu.appre.value="C'est vraiment bien";
+				else{
+					if(moy>10) document.formu.appre.value="C'est bien";
+					else document.formu.appre.value="Peu mieux faire"
+				} 
+			}
+		</script>
+		<h1>Calcule de moyenne 2</h1>
+		<hr width="37%" align=left>
+		<br>Entrez vos valeurs et appuyez sur le bouton "Calculer".<br>
+		<form name="formu">
+			Note 1 : <input type="text" name="val1"><br />
+			Note 2 : <input type="text" name="val2"><br />
+			Note 3 : <input type="text" name="val3"><br />
+			<input type="button" value="Calculer" onclick="moyenne()"><br />
+			Moyenne obtenue :  <input type="text" name="resultat">
+			<input type="text" name="appre">
+		</form>
+		<a href="../index.html"><p>Retour accueil</p></a>
+	</body>
+</html>

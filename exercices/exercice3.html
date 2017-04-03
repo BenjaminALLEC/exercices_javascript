@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="icon" href="images/favicon.ico">
+		<title>Conversions euros/francs</title>
+	</head>
+	<body>
+		<script language="JavaScript">
+			function conversionEU() {
+				//lire la valeur euro
+				var eu=eval(document.form.euro.value);
+				//conversion et arrondi
+				var fr=eu*6.55957;
+				fr=Math.round(fr*100)/100;
+				//affichage du résultat
+				document.form.franc.value=String(fr);
+			}
+			function conversionFR() {
+				//lire la valeur franc
+				var fr=eval(document.form.franc.value);
+				//conversion et arrondi
+				var eu=fr/6.55957;
+				eu=Math.round(eu*100)/100;
+				//affichage du résultat
+				document.form.euro.value=String(eu);
+			}
+		</script>
+		<h1>Conversions euros/francs</h1>
+		<form name="form">
+			<table>
+				<tr>
+					<td>Valeur en Euros	:</td>
+					<td><input name="euro" type="text" size="10"></td>
+					<td><input type="button" value="Convertir" onclick="conversionEU()"></td>
+				</tr>
+				<tr>
+					<td>Valeur en Francs:</td>
+					<td><input name="franc" type="text" size="10"></td>
+					<td><input type="button" value="Convertir" onclick="conversionFR()"></td>
+				</tr>
+				<tr>
+				<td><input type="button" value="Reset" onclick="this.form.reset();"></td>
+				</tr>
+			</table>
+		</form>
+		<a href="../index.html"><p>Retour accueil</p></a>
+	</body>
+</html>
